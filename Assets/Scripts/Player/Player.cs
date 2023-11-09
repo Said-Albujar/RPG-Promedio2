@@ -38,6 +38,23 @@ public class Player : MonoBehaviour
     private float timer1;
     private float timer2;
 
+    public delegate void LevelIncreasedEventHandler(int level);
+    public event LevelIncreasedEventHandler OnLevelIncreased;
+
+    private static Player instance;
+
+    public static Player Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<Player>();
+            }
+            return instance;
+        }
+    }
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -127,11 +144,11 @@ public class Player : MonoBehaviour
 
         if (playerExperience >= experienceToNextLevel)
         {
-            LevelUp();
+            IncreaseLevel(1);
         }
     }
 
-    void LevelUp()
+    public void IncreaseLevel(int level)
     {
         playerLevel++;
         playerExperience -= experienceToNextLevel;
@@ -151,5 +168,7 @@ public class Player : MonoBehaviour
         {
             timeBetweenShots2 -= 0.5f;
         }
+
+        OnLevelIncreased?.Invoke(level);
     }
 }
