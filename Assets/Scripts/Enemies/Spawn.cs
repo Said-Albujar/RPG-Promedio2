@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,12 @@ public class Spawn : MonoBehaviour
 {
     public GameObject enemy1Prefab;
     public GameObject enemy2Prefab;
-    public Player player;
 
-    private float baseSpawnInterval = 10.0f;
-    private float currentSpawnInterval;
-    private float intervalReductionPerLevel = 2.0f;
+    public float baseSpawnInterval = 10.0f;
+    public float currentSpawnInterval;
+    public float intervalReductionPerLevel = 2.0f;
+
+
 
     void Start()
     {
@@ -22,27 +24,16 @@ public class Spawn : MonoBehaviour
     {
         while (true)
         {
-            GameObject enemyType1 = Instantiate(enemy1Prefab, transform.position, Quaternion.identity);
+            SpawnEnemy();
 
             yield return new WaitForSeconds(currentSpawnInterval);
 
-            GameObject enemyType2 = Instantiate(enemy2Prefab, transform.position, Quaternion.identity);
-
-            yield return new WaitForSeconds(currentSpawnInterval);
-
-            ReduceSpawnInterval();
         }
     }
-
-    void ReduceSpawnInterval()
+    void SpawnEnemy()
     {
-        int playerLevel = player.playerLevel;
+        GameObject enemyType1 = Instantiate(enemy1Prefab, transform.position, Quaternion.identity);
 
-        currentSpawnInterval -= intervalReductionPerLevel * playerLevel;
-
-        if (currentSpawnInterval < 2)
-        {
-            currentSpawnInterval = 2; 
-        }
+        GameObject enemyType2 = Instantiate(enemy2Prefab, transform.position, Quaternion.identity);
     }
 }

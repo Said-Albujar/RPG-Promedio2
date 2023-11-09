@@ -462,6 +462,7 @@ MonoBehaviour:
   bulletPrefab2: {fileID: 6349838498570722582, guid: 3e4dd15cfcc80ca4aa03a2326b64de69, type: 3}
   firePoint1: {fileID: 1080808020}
   firePoint2: {fileID: 1080808020}
+  spawn: {fileID: 1168731378}
   shotgunPellets: 5
   spreadAngle: 10
   HealthText: {fileID: 290564256}
@@ -1347,7 +1348,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy1Prefab: {fileID: 335015075842172325, guid: 80b7076326b69574b8e57a038d32eaec, type: 3}
   enemy2Prefab: {fileID: 71968298831177897, guid: 77064984d91f025478b5f72caffc9259, type: 3}
-  player: {fileID: 387870737}
+  baseSpawnInterval: 16
+  currentSpawnInterval: 0
+  intervalReductionPerLevel: 2
 --- !u!4 &1168731379
 Transform:
   m_ObjectHideFlags: 0

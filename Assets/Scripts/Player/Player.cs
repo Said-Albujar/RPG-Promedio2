@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +25,7 @@ public class Player : MonoBehaviour
     public GameObject bulletPrefab2;
     public Transform firePoint1;
     public Transform firePoint2;
+    public Spawn spawn;
     public int shotgunPellets; 
     public float spreadAngle; 
 
@@ -167,6 +167,13 @@ public class Player : MonoBehaviour
         if (timeBetweenShots2 > 0.5f)
         {
             timeBetweenShots2 -= 0.5f;
+        }
+
+        spawn.currentSpawnInterval -= spawn.intervalReductionPerLevel * playerLevel;
+
+        if (spawn.currentSpawnInterval < 2)
+        {
+            spawn.currentSpawnInterval = 2;
         }
 
         OnLevelIncreased?.Invoke(level);
