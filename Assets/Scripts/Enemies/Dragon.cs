@@ -8,6 +8,7 @@ public class Dragon : Enemy
 {
     public Slider HealthBarr;
     public float moveSpeed = 5.0f;
+    public float rotateSpeed = 10.0f;
     public float stoppingDistance;
 
     public GameObject bulletPrefab;
@@ -58,7 +59,7 @@ public class Dragon : Enemy
     {
         Vector3 direction = (player.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5.0f); // Puedes ajustar la velocidad de rotación aquí
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * rotateSpeed);
     }
     void Shoot()
     {

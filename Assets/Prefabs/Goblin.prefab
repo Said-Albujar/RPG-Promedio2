@@ -321,7 +321,7 @@ MonoBehaviour:
   damageToPlayer: 10
   experienceToPlayer: 25
   HealthBarr: {fileID: 335015075219043463}
-  moveSpeed: 3
+  moveSpeed: 5
 --- !u!1 &335015076041813767
 GameObject:
   m_ObjectHideFlags: 0

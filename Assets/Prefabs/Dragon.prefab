@@ -478,7 +478,8 @@ MonoBehaviour:
   damageToPlayer: 15
   experienceToPlayer: 50
   HealthBarr: {fileID: 71968299018201694}
-  moveSpeed: 5
+  moveSpeed: 8
+  rotateSpeed: 20
   stoppingDistance: 10
   bulletPrefab: {fileID: 6349838498570722582, guid: 4911d272cb3eb8d43871a8649613dc3e, type: 3}
   firePoint: {fileID: 71968298032095340}
