@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
-    guid: d8bba8eb87018cf42834ade4b9f570eb
+    guid: ad3b725b55383e749b8c31b02cfa441e
   - enabled: 1
     path: Assets/Scenes/Nivel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
@@ -16,5 +16,5 @@ EditorBuildSettings:
     guid: b7ba3be3d0df1a24eba5fa77a0323440
   - enabled: 1
     path: Assets/Scenes/Creditos.unity
-    guid: 1cd66b923d110fe47bd4596b0ba4a8c1
+    guid: 6fca24c14426daa4aa9611fd2c4cee71
   m_configObjects: {}
