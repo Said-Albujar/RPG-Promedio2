@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using GameJolt.API;
+using GameJolt.UI;
 
 public class Player : MonoBehaviour
 {
@@ -33,6 +35,7 @@ public class Player : MonoBehaviour
     public TextMeshProUGUI HealthText;
     public TextMeshProUGUI LevelText;
     public TextMeshProUGUI ExperienceText;
+    public TextMeshProUGUI DamegeText;
     public string DieScene;
 
     private float timer1;
@@ -88,6 +91,21 @@ public class Player : MonoBehaviour
         }
 
         UpdateUI();
+
+        if(playerLevel >= 2)
+        {
+            Trophies.TryUnlock(215934);
+        }
+
+        if (playerLevel >= 5)
+        {
+            Trophies.TryUnlock(215936);
+        }
+
+        if (playerLevel >= 10)
+        {
+            Trophies.TryUnlock(215935);
+        }
     }
     void UpdateUI()
     {

@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
 
         Destroy(gameObject, bulletLifetime); 
     }
-
+    
     void OnTriggerEnter(Collider other)
     {
         Enemy enemy = other.GetComponent<Enemy>();

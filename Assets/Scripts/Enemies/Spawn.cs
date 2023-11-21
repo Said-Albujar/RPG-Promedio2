@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GameJolt.API;
+using GameJolt.UI;
 
 public class Spawn : MonoBehaviour
 {
@@ -12,12 +14,18 @@ public class Spawn : MonoBehaviour
     public float currentSpawnInterval;
     public float intervalReductionPerLevel = 2.0f;
 
-
-
     void Start()
     {
         currentSpawnInterval = baseSpawnInterval;
         StartCoroutine(SpawnEnemies());
+    }
+
+    void Update()
+    {
+        if (currentSpawnInterval == 2)
+        {
+            Trophies.TryUnlock(215937);
+        }
     }
 
     IEnumerator SpawnEnemies()
